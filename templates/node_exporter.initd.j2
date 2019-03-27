@@ -1,0 +1,40 @@
+#!/sbin/openrc-run
+
+command="/usr/local/bin/node_exporter"
+command_args="$ARGS"
+command_args="${command_args:-\
+{% for collector in node_exporter_enabled_collectors -%}
+{%   if not collector is mapping %}
+    --collector.{{ collector }} \
+{%   else -%}
+{%     set name, options = (collector.items()|list)[0] -%}
+    --collector.{{ name }} \
+{%     for k,v in options|dictsort %}
+    --collector.{{ name }}.{{ k }}={{ v }} \
+{%     endfor -%}
+{%   endif -%}
+{% endfor -%}
+{% for collector in node_exporter_disabled_collectors %}
+    --no-collector.{{ collector }} \
+{% endfor %}
+    --web.listen-address={{ node_exporter_web_listen_address }}
+}"
+
+command_background="yes"
+group="{{ node_exporter_system_group }}"
+user="{{ node_exporter_system_user }}"
+
+logdir="/var/log/prometheus"
+logfile="$logdir/${SVCNAME}.log"
+pidfile="/var/run/${SVCNAME}.pid"
+start_stop_daemon_args="--stderr $logfile --user $user --group $group"
+
+depend() {
+	need net
+	after firewall
+}
+
+start_pre() {
+	checkpath -d -o $user:$group -m755 $logdir
+	checkpath -f -o $user:$group -m644 $logfile
+}
