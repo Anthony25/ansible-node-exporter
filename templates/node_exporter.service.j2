@@ -2,7 +2,7 @@
 
 [Unit]
 Description=Prometheus Node Exporter
-After=network.target
+After=network-online.target
 
 [Service]
 Type=simple
@@ -29,10 +29,14 @@ SyslogIdentifier=node_exporter
 Restart=always
 
 PrivateTmp=yes
+{% for m in ansible_mounts if m.mount == '/home' %}
+ProtectHome=read-only
+{% else %}
 ProtectHome=yes
+{% endfor %}
 NoNewPrivileges=yes
 
-{% if node_exporter_systemd_version.stdout | int >= 232 %}
+{% if node_exporter_systemd_version | int >= 232 %}
 ProtectSystem=strict
 ProtectControlGroups=true
 ProtectKernelModules=true
