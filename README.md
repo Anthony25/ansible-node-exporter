@@ -14,7 +14,7 @@ Deploy prometheus [node exporter](https://github.com/prometheus/node_exporter) u
 
 ## Requirements
 
-- Ansible >= 2.5 (It might work on previous versions, but we cannot guarantee it)
+- Ansible >= 2.6 (It might work on previous versions, but we cannot guarantee it)
 - gnu-tar on Mac deployer host (`brew install gnu-tar`)
 
 ## Role Variables
@@ -51,7 +51,7 @@ We provide demo site for full monitoring solution based on prometheus and grafan
 The preferred way of locally testing the role is to use Docker and [molecule](https://github.com/metacloud/molecule) (v2.x). You will have to install Docker on your system. See "Get started" for a Docker package suitable to for your system.
 We are using tox to simplify process of testing on multiple ansible versions. To install tox execute:
 ```sh
-pip install tox
+pip3 install tox
 ```
 To run tests on all ansible versions (WARNING: this can take some time)
 ```sh
@@ -59,7 +59,7 @@ tox
 ```
 To run a custom molecule command on custom environment with only default test scenario:
 ```sh
-tox -e py27-ansible25 -- molecule test -s default
+tox -e py35-ansible28 -- molecule test -s default
 ```
 For more information about molecule go to their [docs](http://molecule.readthedocs.io/en/latest/).
 

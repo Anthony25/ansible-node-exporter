@@ -10,7 +10,7 @@
 
 - name: Set systemd version fact
   set_fact:
-    node_exporter_systemd_version: "{{ __systemd_version.stdout_lines[0].split(' ')[-1] }}"
+    node_exporter_systemd_version: "{{ __systemd_version.stdout_lines[0] | regex_replace('^systemd\\s(\\d+).*$', '\\1') }}"
   when: ansible_service_mgr == "systemd"
 
 - name: Naive assertion of proper listen address
@@ -53,7 +53,7 @@
         validate_certs: false
         user: "{{ lookup('env', 'GH_USER') | default(omit) }}"
         password: "{{ lookup('env', 'GH_TOKEN') | default(omit) }}"
-      no_log: true
+      no_log: "{{ not lookup('env', 'MOLECULE_DEBUG') | bool }}"
       register: _latest_release
       until: _latest_release.status == 200
       retries: 5
