@@ -21,8 +21,8 @@ command_args="${command_args:-\
 }"
 
 command_background="yes"
-group="{{ node_exporter_system_group }}"
-user="{{ node_exporter_system_user }}"
+group="{{ _node_exporter_system_group }}"
+user="{{ _node_exporter_system_user }}"
 
 logdir="/var/log/prometheus"
 logfile="$logdir/${SVCNAME}.log"
