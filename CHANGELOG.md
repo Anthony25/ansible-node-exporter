@@ -1,5 +1,76 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/cloudalchemy/node-exporter)
+
+**Implemented enhancements:**
+
+- Hardcode node-exporter username and group [\#139](https://github.com/cloudalchemy/ansible-node-exporter/issues/139)
+
+**Fixed bugs:**
+
+- Add Support for over proxy installation [\#147](https://github.com/cloudalchemy/ansible-node-exporter/issues/147)
+- Checksum error [\#146](https://github.com/cloudalchemy/ansible-node-exporter/issues/146)
+- Problem downloading sha256sum.txt from github [\#143](https://github.com/cloudalchemy/ansible-node-exporter/issues/143)
+
+**Merged pull requests:**
+
+- Use symbolic permissions for textfile collector dir [\#150](https://github.com/cloudalchemy/ansible-node-exporter/pull/150) ([friesenkiwi](https://github.com/friesenkiwi))
+- \[REPO SYNC\] lock molecule to v2 [\#149](https://github.com/cloudalchemy/ansible-node-exporter/pull/149) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- always validate GitHub certificate as there is no reason not to trust it [\#148](https://github.com/cloudalchemy/ansible-node-exporter/pull/148) ([paulfantom](https://github.com/paulfantom))
+- Install 'policycoreutils-python' on redhat/centos \< 8 and fedora \< 29… [\#145](https://github.com/cloudalchemy/ansible-node-exporter/pull/145) ([wikro](https://github.com/wikro))
+- Add quotes to node\_exporter parametrs in systemd service [\#144](https://github.com/cloudalchemy/ansible-node-exporter/pull/144) ([ruzickap](https://github.com/ruzickap))
+
+## [0.19.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-01-31)
+**Merged pull requests:**
+
+- remove system user management and convert variables to internal ones [\#142](https://github.com/cloudalchemy/ansible-node-exporter/pull/142) ([paulfantom](https://github.com/paulfantom))
+- Do not manage system directories [\#140](https://github.com/cloudalchemy/ansible-node-exporter/pull/140) ([paulfantom](https://github.com/paulfantom))
+- Add binary install directory [\#137](https://github.com/cloudalchemy/ansible-node-exporter/pull/137) ([guimaluf](https://github.com/guimaluf))
+
+## [0.18.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-01-16)
+**Closed issues:**
+
+- Node exporter fails on ec2 builds with ""No file was found when using first\_found" [\#115](https://github.com/cloudalchemy/ansible-node-exporter/issues/115)
+
+**Merged pull requests:**
+
+- \[REPO SYNC\] Merge pull request \#4 from cloudalchemy/travis\_fix [\#138](https://github.com/cloudalchemy/ansible-node-exporter/pull/138) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] use latest available python [\#136](https://github.com/cloudalchemy/ansible-node-exporter/pull/136) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Fix syntax on SELinux installation for clearlinux [\#134](https://github.com/cloudalchemy/ansible-node-exporter/pull/134) ([paretl](https://github.com/paretl))
+- \[REPO SYNC\] remove IRC link [\#133](https://github.com/cloudalchemy/ansible-node-exporter/pull/133) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- move installing selinux package dependencies into separate tasks [\#132](https://github.com/cloudalchemy/ansible-node-exporter/pull/132) ([paulfantom](https://github.com/paulfantom))
+- Updated README.md [\#129](https://github.com/cloudalchemy/ansible-node-exporter/pull/129) ([envy7](https://github.com/envy7))
+- add option to propagate binaries without access to internet [\#126](https://github.com/cloudalchemy/ansible-node-exporter/pull/126) ([DaazKu](https://github.com/DaazKu))
+- \[REPO SYNC\] add declarative label sync; add autolabelling PRs [\#123](https://github.com/cloudalchemy/ansible-node-exporter/pull/123) ([cloudalchemybot](https://github.com/cloudalchemybot))
+
+## [0.17.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2019-11-14)
+**Closed issues:**
+
+- Check is not working [\#107](https://github.com/cloudalchemy/ansible-node-exporter/issues/107)
+
+**Merged pull requests:**
+
+- \[REPO SYNC\] molecule: use CI images from quay.io instead of dockerhub [\#121](https://github.com/cloudalchemy/ansible-node-exporter/pull/121) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] Update releaser.sh [\#120](https://github.com/cloudalchemy/ansible-node-exporter/pull/120) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] add support for CentOS8 [\#119](https://github.com/cloudalchemy/ansible-node-exporter/pull/119) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- tasks: remove already covered entries when choosing an OS specific vars [\#118](https://github.com/cloudalchemy/ansible-node-exporter/pull/118) ([paulfantom](https://github.com/paulfantom))
+- Run preflight tasks to register variables when check\_mode is enabled [\#117](https://github.com/cloudalchemy/ansible-node-exporter/pull/117) ([paulfantom](https://github.com/paulfantom))
+- tasks: do not touch any settings of system directory /usr/local/bin [\#116](https://github.com/cloudalchemy/ansible-node-exporter/pull/116) ([paulfantom](https://github.com/paulfantom))
+
+## [0.16.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2019-10-18)
+**Fixed bugs:**
+
+- Do not use createhome alias as it seems to break whole system permissions [\#111](https://github.com/cloudalchemy/ansible-node-exporter/pull/111) ([paulfantom](https://github.com/paulfantom))
+
+**Closed issues:**
+
+- allow custom ignored-mount-points [\#106](https://github.com/cloudalchemy/ansible-node-exporter/issues/106)
+
+**Merged pull requests:**
+
+- add official support for CentOS8 [\#114](https://github.com/cloudalchemy/ansible-node-exporter/pull/114) ([paulfantom](https://github.com/paulfantom))
+- molecule/default/tests: test if permissions of other files are unchanged [\#112](https://github.com/cloudalchemy/ansible-node-exporter/pull/112) ([paulfantom](https://github.com/paulfantom))
+
 ## [0.15.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2019-09-11)
 **Merged pull requests:**
 
