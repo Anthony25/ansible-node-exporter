@@ -1,13 +1,60 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/cloudalchemy/node-exporter)
+## [0.22.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-10-02)
+**Fixed bugs:**
 
+- Role fails to unpack node\_exporter binary [\#177](https://github.com/cloudalchemy/ansible-node-exporter/issues/177)
+- Checksum download sometimes fails \(status: 400\) [\#171](https://github.com/cloudalchemy/ansible-node-exporter/issues/171)
+
+**Merged pull requests:**
+
+- optionally allow node\_exporter access to shared /tmp [\#179](https://github.com/cloudalchemy/ansible-node-exporter/pull/179) ([kklimonda](https://github.com/kklimonda))
+- set file mode explicitly when downloading binary [\#178](https://github.com/cloudalchemy/ansible-node-exporter/pull/178) ([filippoprojetto](https://github.com/filippoprojetto))
+- Chore: troubleshooting document [\#172](https://github.com/cloudalchemy/ansible-node-exporter/pull/172) ([till](https://github.com/till))
+
+## [0.21.5](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-07-21)
+**Fixed bugs:**
+
+- Move StartLimitInterval to \[Service\] section [\#170](https://github.com/cloudalchemy/ansible-node-exporter/pull/170) ([bittopaz](https://github.com/bittopaz))
+
+## [0.21.4](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-07-20)
+**Merged pull requests:**
+
+- Use localhost to fetch checksums [\#169](https://github.com/cloudalchemy/ansible-node-exporter/pull/169) ([SuperQ](https://github.com/SuperQ))
+
+## [0.21.3](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-06-18)
+**Fixed bugs:**
+
+- node\_exporter can not be updated when node\_exporter\_binary\_local\_dir is set [\#160](https://github.com/cloudalchemy/ansible-node-exporter/issues/160)
+
+**Merged pull requests:**
+
+- add missing backslash when using TLS configuration [\#163](https://github.com/cloudalchemy/ansible-node-exporter/pull/163) ([sengel](https://github.com/sengel))
+
+## [0.21.2](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-06-18)
+**Merged pull requests:**
+
+- always import install.yml when using local dir [\#162](https://github.com/cloudalchemy/ansible-node-exporter/pull/162) ([appliedprivacy](https://github.com/appliedprivacy))
+
+## [0.21.1](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-06-16)
+**Merged pull requests:**
+
+- New prometheus/node\_exporter upstream release! [\#159](https://github.com/cloudalchemy/ansible-node-exporter/pull/159) ([cloudalchemybot](https://github.com/cloudalchemybot))
+
+## [0.21.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-05-31)
+**Merged pull requests:**
+
+- \*: add support for node\_exporter TLS settings [\#156](https://github.com/cloudalchemy/ansible-node-exporter/pull/156) ([paulfantom](https://github.com/paulfantom))
+- New prometheus/node\_exporter upstream release! [\#155](https://github.com/cloudalchemy/ansible-node-exporter/pull/155) ([cloudalchemybot](https://github.com/cloudalchemybot))
+
+## [0.20.0](https://galaxy.ansible.com/cloudalchemy/node-exporter) (2020-04-30)
 **Implemented enhancements:**
 
 - Hardcode node-exporter username and group [\#139](https://github.com/cloudalchemy/ansible-node-exporter/issues/139)
 
 **Fixed bugs:**
 
+- Task "Allow Node Exporter port in SELinux on RedHat OS family" fails on centos 7 [\#152](https://github.com/cloudalchemy/ansible-node-exporter/issues/152)
 - Add Support for over proxy installation [\#147](https://github.com/cloudalchemy/ansible-node-exporter/issues/147)
 - Checksum error [\#146](https://github.com/cloudalchemy/ansible-node-exporter/issues/146)
 - Problem downloading sha256sum.txt from github [\#143](https://github.com/cloudalchemy/ansible-node-exporter/issues/143)
